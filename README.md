@@ -1,6 +1,7 @@
 # Méthologie de la programmation
 
-## TP1
+## TP1 : Premiers programmes en Ada
+***
 
 1. ### Compiler et exécuter un programme ADA
 
@@ -61,6 +62,10 @@
     > **Indication :** Les nombres amis compris entre 2 et 100000 sont (220, 284), (1184, 1210), (2620, 2924), (5020, 5564), (6232, 6368), (10744, 10856), (12285, 14595), (17296, 18416),(66928, 66992), (67095, 71145), (63020, 76084), (69615, 87633) et (79750, 88730).
 
 ## TP2
+***
+> **Notions acquises à l’issue du TP :**
+> - Savoir utiliser les structures de contrôle.
+> -  Appliquer la méthode des raffinages.
 
 1. ### Drone commandé par un menu en ADA
 
@@ -133,9 +138,99 @@
         
         En fin de partie, le nombre de propositions sera affiché.
 
-## TP3
+## TP3 : Les tableaux
+***
 
-## TP4
+> **Notions importantes à acquérir :**
+> - Comprendre la di↵érence entre taille réelle (effective) et taille maximum d’un tableau.
+> - Savoir gérer correctement la taille réelle (effective) d’un tableau.
+
+On désire manipuler un tableau à partir des déclarations suivantes :
+
+```ADA
+NMAX : constant INTEGER := 5; -- Indice maximum du tableau
+TYPE TAB_ENTIERS is ARRAY(1.. NMAX) of INTEGER;
+un_tab : TAB_ENTIERS; -- un tableau d’au maximum NMAX entiers
+nb_elements : INTEGER; -- le nombre effectif d’éléments (<= NMAX) de un_tab.
+```
+NB1. On fera un fichier .adb par programme.
+NB2. On choisira une valeur petite pour NMAX (par exemple 5) afin de tester plus
+facilement les cas limites.
+
+1. Raffiner, écrire en ADA et tester un programme permettant d’afficher à l’écran
+le tableau un tab préalablement initialisé.
+
+2. Raffiner, écrire en ADA et tester un programme permettant de modifier la
+i ieme (i donné par l’utilisateur) composante du tableau un tab préalablement
+initialisé.
+
+3. Raffiner, écrire en ADA et tester un programme permettant d’incrémenter de
+1 tous les éléments du tableau un tab préalablement initialisé.
+
+4. Raffiner, écrire en ADA et tester un programme permettant d’afficher l’indice
+de la p-ième occurrence d’une valeur dans le tableau un tab préalablement
+initialisé. Si la valeur n’est pas dans le tableau en p-ième occurrence le message
+”valeur non présente” sera affiché.
+
+5. Raffiner, écrire en ADA et tester un programme permettant d’insérer une nou-
+velle valeur dans la première case du tableau en décalant les autres éléments.
+Si l’insertion n’est pas possible, le message ”insertion impossible” sera affiché.
+
+
+## TP4 : Exercices sur les tableaux
+***
+
+1. ### Crible d’Eratosthene
+
+Ecrire en ADA un programme qui calcule et affiche les nombres premiers compris
+entre 2 et N, N lu au clavier, par la méthode du crible d’Eratosthène. Le principe
+est d’associer à chaque entier entre 2 et N un état pour indiquer s’il est susceptible
+d’être premier. On utilisera pour cela un tableau.
+
+2. ### Tri par insertion
+
+Pour trier les éléments d’un tableau, on procèdera par étapes jusqu’à ce que le
+tableau soit entièrement trié : à la i eme étape on insère le (i + 1) eme élément à
+sa place parmi les i éléments précédents qui sont déjà triés (méthode du joueur de
+cartes).
+
+Par exemple, pour trier le tableau `(9 2 8 5 1 7)` de taille 6, le tri passera par
+les étapes suivantes : (dans ce qui suit, le ’.’ délimite la partie du tableau prise en
+considération à chaque étape)
+
+- Etape i = 1
+    La partie (9) du tableau est temporairement triée. Il faut y insérer 2 (le (i + 1)<sup>eme</sup> élément) à sa place.
+    ```
+    (9 . 2 8 5 1 7)
+    (2 . 9 8 5 1 7)
+    ```
+- Etape i = 2
+    La partie (2 9) du tableau est temporairement triée. Il faut y insérer 8 (le (i + 1)<sup>eme</sup> élément) à sa place.
+    ```
+    (2 9 . 8 5 1 7)
+    (2 8 . 9 5 1 7)
+    ```
+- Etape i = 3
+    La partie (2 8 9) du tableau est temporairement triée. Il faut y insérer 5 (le (i + 1)<sup>eme</sup> élément) à sa place.
+    ```
+    (2 8 9 . 5 1 7)
+    (2 5 8 . 9 1 7)
+    ```
+- Etape i = 4
+    La partie (2 5 8 9) du tableau est temporairement triée. Il faut y insérer 1 (le (i + 1)<sup>eme</sup> élément) à sa place.
+    ```
+    (2 5 8 9 . 1 7)
+    (1 2 5 8 . 9 7)
+    ```
+- Etape i = 5
+    La partie (1 2 5 8 9) du tableau est temporairement triée. Il faut y insérer 7 (le (i + 1)<sup>eme</sup> élément) à sa place.
+    ```
+    (1 2 5 8 9 . 7)
+    (1 2 5 7 8 . 9)
+    ```
+    Le tableau est trié.
+    
+Ecrire un programme en ADA utilisant cet algorithme de tri par insertion.
 
 ## TP5 : Manipulation de chaînes de caractères
 ***
