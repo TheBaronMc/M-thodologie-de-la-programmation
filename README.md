@@ -352,3 +352,40 @@ d’une valeur) mais avec une chaine de caractères au lieu d’un tableau d’e
 6. Raffiner et écrire en ADA un programme conservant dans un tableau de 26
 entiers max le nombre d’occurrences des lettres d’une chaı̂ne (caractère entre
 ’a’ et ’z’).
+
+## TP6 : Les sous-programmes
+***
+
+> **Notions importantes à acquérir :**
+> + Savoir faire la différence entre `fonction` et `procédure`.
+> + Savoir écrire le contrat d’un sous-programme (en particulier : pré-conditions, post-conditions).
+> + Comprendre les 3 modes de passage d’un paramètre : Donnée, Résultat, Donnée/Résultat.
+> + Savoir appeler un sous-programme en respectant son contrat : test des préconditions.
+
+1. ### Manipulation de nombres positifs binaires
+
+Un nombre positif binaire (en base 2) est représenté sous la forme d’un tableau de 8 bits exactement, dont les valeurs seront 0 ou 1 et dont les indices vont de 0 à 7.
+
+Par exemple le nombre `00101101` sera représenté (dans l’ordre inverse !) en mémoire par le tableau (indices de 0 à 7) :
+
+```
+indices : 0 1 2 3 4 5 6 7
+valeurs : 1 0 1 1 0 1 0 0
+```
+et sa valeur calcul´ee par la formule : <br>
+<code>
+1 ∗ 2<sup>0</sup> + 0 ∗ 2<sup>1</sup> + 1 ∗ 2<sup>2</sup> + 1 ∗ 2<sup>3</sup> + 0 ∗ 2<sup>4</sup> + 1 ∗ 2<sup>5</sup> + 0 ∗ 2<sup>6</sup> + 0 ∗ 2<sup>7</sup>
+</code>
+
+Les opérations que l’on souhaite implanter sont les suivantes :
++ Affichage `a l’´ecran d’un nombre binaire (procedure)
++ Conversion en base 10 d’un nombre binaire (fonction)
++ Conversion en binaire d’un nombre en base 10 (fonction)
++ Addition de deux nombres binaires (fonction)
+
+1. D´efinir le type `BINAIRE` associé à la représentation d’un nombre binaire sous forme d’un tableau d’entiers. Les indices iront de 0 à 7.
+2. Donner les contrats de chaque sous-programme (rôle, paramètres et leur mode
+de passage, pré et post conditions),
+3. Ecrire un programme principal associé aux contrats précédents. On n’oubliera
+pas de tenir compte des contrats des sous-programmes appelés.
+4. Ecrire le code de chaque sous-programme.

@@ -1,0 +1,3 @@
+test/
+TP*/*
+!TP*/*.adb
