@@ -1,3 +1,4 @@
 test/
 TP*/*
 !TP*/*.adb
+!TP*/*.ads
